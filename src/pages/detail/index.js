@@ -3,9 +3,10 @@
  */
 import React from 'react';
 import ReactDom from 'react-dom';
-import Count from './component';
+import './index.scss';
+import Count from '../../components/component';
 
 ReactDom.render(
-  <Count initValue={1} />,
+  <Count initValue={100} />,
   document.getElementById('content')
 );

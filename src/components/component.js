@@ -4,15 +4,10 @@
  */
 
 import React from 'react';
-const {Component, PropTypes} = React;
+import './component.scss';
+const {Component} = React;
 
 class Count extends Component {
-  static propTypes = {
-    initValue: PropTypes.number
-  };
-  static defaultProps = {
-    initValue: 0
-  };
 
   constructor(props) {
     super(props);
@@ -36,9 +31,9 @@ class Count extends Component {
     } = this.state;
     return (
       <div>
-        <div>{`当前值是：${value}`} </div>
-        <button onClick={this.onClick.bind(this, 1)}>点击加一</button>
-        <button onClick={this.onClick.bind(this, -1)}>点击减一</button>
+        <div className="header">{`当前值：${value}`} </div>
+        <button onClick={this.onClick.bind(this, 1)}>点击+1</button>
+        <button onClick={this.onClick.bind(this, -1)}>点击-1</button>
       </div>
     )
   }
