@@ -7,6 +7,6 @@ import './index.scss';
 import Count from '../../components/component';
 
 ReactDom.render(
-  <Count initValue={100} />,
+  <Count initValue={10} />,
   document.getElementById('content')
 );

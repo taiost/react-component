@@ -11,6 +11,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const srcDir = path.join(pwd, 'src');
+const buildDir = path.join(pwd, 'build');
 
 module.exports = {
   entry: () => {
@@ -25,11 +26,6 @@ module.exports = {
       ret[scriptPath.replace(/^(.*)\.(js(x?))$/, '$1')] = srcDir + '/' + scriptPath;
     });
     return ret;
-  },
-  output: {
-    path: path.join(pwd, 'build'),
-    filename: '[name].js',
-    // publicPath: '/'
   },
 
   module: {
@@ -55,5 +51,13 @@ module.exports = {
     modules: [
       'node_modules'
     ]
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin({
+      filename: '[name].style.css'
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common' // 指定公共 bundle 的名称。
+    })
+  ]
 };

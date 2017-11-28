@@ -1,18 +1,21 @@
+"use strict";
+
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const pwd = process.cwd();
+const fs = require('fs');
+const path = require('path');
 
 module.exports = merge(common,{
+  output: {
+    path: path.join(pwd, 'src'),
+    filename: '[name].js'
+  },
   devtool: 'inline-source-map',
   plugins: [
-    new ExtractTextPlugin({
-      filename: '[name].style.css'
-    }),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'common' // 指定公共 bundle 的名称。
-    })
+    new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
     contentBase: './src',

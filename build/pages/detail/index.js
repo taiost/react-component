@@ -1,1 +1,1 @@
-webpackJsonp([1],{54:function(e,t,n){"use strict";function u(e){return e&&e.__esModule?e:{default:e}}var a=u(n(8)),c=u(n(25));n(70);var d=u(n(27));c.default.render(a.default.createElement(d.default,{initValue:100}),document.getElementById("content"))},70:function(e,t){}},[54]);
+webpackJsonp([1],{20:function(e,t){},4:function(e,t,n){"use strict";function u(e){return e&&e.__esModule?e:{default:e}}var a=u(n(0)),c=u(n(1));n(20);var d=u(n(3));c.default.render(a.default.createElement(d.default,{initValue:10}),document.getElementById("content"))}},[4]);
